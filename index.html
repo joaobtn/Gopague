@@ -31,16 +31,16 @@
         }
 
         #wrap {
-            background-color: pink;
+            background-color: rgb(0, 0, 0);
             height: 100%;
             display: flex;
             flex-direction: column;
-            gap: .5rem;
+            gap: 0.5rem;
         }
 
         /* header filho direto de #wrap */
         #wrap>header {
-            background-color: #222;
+            background-color: #000000;
             color: white;
             display: flex;
             align-items: center;
@@ -48,8 +48,8 @@
 
         .logo {
             font-size: 4rem;
-            color: orange;
-            margin: .5rem;
+            color: rgb(255, 0, 0);
+            margin: 0.5rem;
         }
 
         .title {
@@ -57,31 +57,34 @@
             font-family: monospace;
             font-weight: normal;
             text-align: center;
-            font-size: 2rem;
+            font-size: 4rem;
         }
 
         .title strong {
-            color: orange;
+            color: rgb(255, 0, 0);
        }
 
        .title small {
         display: block;
-        font-size: 0.5rem;
+        font-size: 0.75rem;
         letter-spacing: .05rem;
        }
 
         #wrap>header a {
             text-decoration: none;
-            color: white;
+            color: rgb(0, 110, 255);
+            font-size: 5rem;
+            letter-spacing: 0rem;
+            margin: 0;
         }
 
         #wrap>nav {
-            background-color: yellow;
+            background-color: rgb(255, 255, 255);
         }
 
         #wrap>main {
-            background-color: orange;
-            color: white;
+            background-color: rgb(255, 255, 255);
+            color: rgb(255, 255, 255);
             display: flex;
             flex-direction: column;
             gap: .75rem;
@@ -89,7 +92,7 @@
         }
 
         #wrap>main>article {
-            background-color: green;
+            background-color: rgb(76, 196, 76);
             padding: 1rem;
             flex-grow: 1;
         }
@@ -100,7 +103,7 @@
         }
 
         #wrap>footer {
-            background-color: red;
+            background-color: rgb(90, 90, 90);
         }
 
 
@@ -135,10 +138,10 @@
         </header>
 
         <nav>
-            <a href="#Início"><span>Início</span></a>
-            <a href="#Lista"><span>Lista</span></a>
-            <a href="#Contato"><span>Contato</span></a>
-            <a href="#Sobre"><span>Sobre</span></a>
+            <a href="#Início"><i class="fa-regular fa-house"></i><span>Início</span></a>
+            <a href="#Lista"><i class="fa-solid fa-list"></i><span>Lista</span></a>
+            <a href="#Contato"><i class="fa-regular fa-envelope"></i><span>Contato</span></a>
+            <a href="#Sobre"><i class="fa-regular fa-circle-question"></i><span>Sobre</span></a>
         </nav>
 
         <main>
@@ -146,6 +149,15 @@
             <article>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, similique. Dicta illum natus
                 molestias sapiente sequi voluptatibus ab, excepturi numquam quos ex eum delectus doloribus nam iure
                 aliquam architecto laborum!
+
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, similique. Dicta illum natus
+                molestias sapiente sequi voluptatibus ab, excepturi numquam quos ex eum delectus doloribus nam iure
+                aliquam architecto laborum!
+
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, similique. Dicta illum natus
+                molestias sapiente sequi voluptatibus ab, excepturi numquam quos ex eum delectus doloribus nam iure
+                aliquam architecto laborum!
+                
 
             </article>
 
