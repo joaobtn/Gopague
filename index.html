@@ -31,68 +31,43 @@
         }
 
         #wrap {
-            background-color: rgb(0, 0, 0);
+            background-color: pink;
             height: 100%;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        /* header filho direto de #wrap */
-        #wrap>header {
-            background-color: #000000;
-            color: white;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 4rem;
-            color: rgb(255, 0, 0);
-            margin: 0.5rem;
-        }
-
-        .title {
-            margin: 0;
-            font-family: monospace;
-            font-weight: normal;
-            text-align: center;
-            font-size: 4rem;
-        }
-
-        .title strong {
-            color: rgb(255, 0, 0);
-       }
-
-       .title small {
-        display: block;
-        font-size: 0.75rem;
-        letter-spacing: .05rem;
-       }
-
-        #wrap>header a {
-            text-decoration: none;
-            color: rgb(0, 110, 255);
-            font-size: 5rem;
-            letter-spacing: 0rem;
-            margin: 0;
+            gap: .5rem;
         }
 
         #wrap>nav {
-            background-color: rgb(255, 255, 255);
+            background-color: orange;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        #wrap>nav a {
+            text-decoration: none;
+            color: #222;
+            padding: 1rem;
+            transition: .2s;
+        }
+
+        #wrap>nav a:hover {
+            background-color: #222;
+            color: orange;
         }
 
         #wrap>main {
-            background-color: rgb(255, 255, 255);
-            color: rgb(255, 255, 255);
+            background-color: orange;
+            color: white;
             display: flex;
             flex-direction: column;
-            gap: .75rem;
+            gap: .5rem;
             flex-grow: 1;
         }
 
         #wrap>main>article {
-            background-color: rgb(76, 196, 76);
+            background-color: green;
             padding: 1rem;
             flex-grow: 1;
         }
@@ -103,11 +78,11 @@
         }
 
         #wrap>footer {
-            background-color: rgb(90, 90, 90);
+            background-color: red;
         }
 
 
-        /* Media Queries */
+        /* Media Queries - Telas maiores 768px */
 
         @media screen and (min-width: 768px) {
             #wrap>main {
@@ -120,6 +95,103 @@
                 flex-basis: 220px;
             }
         }
+
+        #wrap>header {
+            background-color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .header-search {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .header-search input, .header-search button {
+            /* Herda a fonte e o tamanho da fonte do body */
+            font-family: inherit;
+            font-size: inherit;
+            border: none;
+            padding: .5rem 1rem;
+        }
+
+        .header-search input {
+            flex-grow: 1;
+            border-radius: .4rem 0 0 .4rem;
+        }
+
+                .header-search button {
+            border-radius: 0 .4rem .4rem 0;
+            padding: .5rem;
+            background-color: rgb(199, 199, 199);
+        }
+
+        #wrap>header a {
+            text-decoration: none;
+        }
+
+        #wrap>header .logo {
+            font-size: 4rem;
+            color: orange;
+        }
+
+        #wrap>header .title {
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #wrap>header .title h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        #wrap>header .title i {
+            font-size: small;
+            color: orange;
+        }
+
+        #wrap>header .title span {
+            color: orange;
+        }
+
+        #wrap>header .title small {
+            font-family: monospace;
+            letter-spacing: .25rem;
+        }
+
+        /* Media Queries - Telas maiores 768px */
+
+        @media screen and (min-width: 768px) {
+            #wrap>main {
+                flex-direction: row;
+            }
+
+            #wrap>main>aside {
+                /* flex: 0 0 220px; */
+                flex-shrink: 0;
+                flex-basis: 220px;
+            }
+        }
+
+        /* Media Queries - Telas maiores 575px */
+        @media screen and (min-width: 575px) {
+
+            #wrap>header {
+                flex-direction: row;
+                 justify-content: space-between;
+            }
+
+        }
     </style>
 </head>
 
@@ -128,20 +200,33 @@
     <div id="wrap">
 
         <header>
-            <a href="#Início"><i class="fa-brands fa-google"></i>
-            <a href="#Início">
-                <h1 class="title">
-                    <span>o<strong>pague</strong></span>
-                    <small>Encontre tudo o que precisar!</small>
-                </h1>
-            </a>
+           <!--  Logotipo e nome do site -->
+            <div class="header-logo">
+                <a href="#Início" class="logo"><i class="fa-solid fa-cat fa-fw"></i></a>
+                <a href="#Início" class="title">
+                    <h1>
+                        <i class="fa-solid fa-less-than"></i>
+                        <span>S</span>uper<span>C</span>at
+                        <i class="fa-solid fa-greater-than"></i>
+                    </h1>
+                    <small>Categorize tudo!</small>
+                </a>
+        </div>
+
+
+ <!-- Formulário de pesquisa -->
+            <form action="" method="get" class="header-search">
+                <input type="search" name="q" placeholder="Pesquisar por...">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass fa-flip-horizontal"></i></button>
+            </form>
+
         </header>
 
         <nav>
-            <a href="#Início"><i class="fa-regular fa-house"></i><span>Início</span></a>
-            <a href="#Lista"><i class="fa-solid fa-list"></i><span>Lista</span></a>
-            <a href="#Contato"><i class="fa-regular fa-envelope"></i><span>Contato</span></a>
-            <a href="#Sobre"><i class="fa-regular fa-circle-question"></i><span>Sobre</span></a>
+            <a href="#Início"><i class="fa-solid fa-house"></i><span>Início</span></a>
+            <a href="#Lista"><i class="fa-solid fa-clipboard-list"></i><span>Lista</span></a>
+            <a href="#Contato"><i class="fa-solid fa-comments"></i><span>Contato</span></a>
+            <a href="#Sobre"><i class="fa-solid fa-circle-info"></i><span>Sobre</span></a>
         </nav>
 
         <main>
@@ -149,15 +234,6 @@
             <article>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, similique. Dicta illum natus
                 molestias sapiente sequi voluptatibus ab, excepturi numquam quos ex eum delectus doloribus nam iure
                 aliquam architecto laborum!
-
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, similique. Dicta illum natus
-                molestias sapiente sequi voluptatibus ab, excepturi numquam quos ex eum delectus doloribus nam iure
-                aliquam architecto laborum!
-
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, similique. Dicta illum natus
-                molestias sapiente sequi voluptatibus ab, excepturi numquam quos ex eum delectus doloribus nam iure
-                aliquam architecto laborum!
-                
 
             </article>
 
