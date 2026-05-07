@@ -34,7 +34,7 @@ a:hover {
 
 body {
     background-color: black;
-    background-image: url("../img/fundo.jpg");
+    background-image: url("../img/fundo.jpg.png");
     background-attachment: fixed;
     background-position: center;
     background-repeat: repeat; /* Padrão */
