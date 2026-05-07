@@ -1,0 +1,282 @@
+/* Importa o CSS do font Awesome usando CSS @import */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+
+/***************/
+/* Reset geral */
+/***************/
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+/* Links padrão */
+
+a {
+    text-decoration: none;
+    color: steelblue;
+}
+
+a:hover {
+    color: orangered;
+}
+
+/* Fundo da página */
+
+body {
+    background-color: black;
+    background-image: url("../img/fundo.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat; /* Padrão */
+}
+
+/* Elemento principal abaixo do body */
+
+#wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    max-width: 1080px;
+    min-width: 320px;
+    margin: auto;
+    padding: 0 .5rem;
+}
+
+/**********************/
+/* Conteúdo principal */
+/**********************/
+
+/* Elemento pai - flex */
+
+#wrap>main {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    flex-grow: 1;
+}
+
+/* Flexbox com conteúdo principal */
+
+#wrap>main>article {
+    background-color: #fff;
+    padding: 1rem;
+    flex-grow: 1;
+    color: black;
+    border-radius: .4rem;
+}
+
+/* Flexbox com conteúdo complementar opcional */
+
+#wrap>main>aside {
+    background-color: rgb(255, 239, 209);
+    padding: 1rem;
+    color: black;
+    border-radius: .4rem;
+}
+
+/* Cabeçalho da página */
+
+#wrap>header {
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #fff;
+    border-top: none;
+    border-radius: 0 0 .5rem .5rem;
+}
+
+/* Formata um ícone como logotipo */
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+/* Formulário de pesquisa */
+
+.header-search {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.header-search input,
+.header-search button {
+    /* Herda a fonte e o tamanho da fonte do body */
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    padding: .5rem 1rem;
+}
+
+.header-search input {
+    flex-grow: 1;
+    border-radius: .4rem 0 0 .4rem;
+}
+
+.header-search button {
+    border-radius: 0 .4rem .4rem 0;
+    padding: .5rem;
+    background-color: rgb(231, 231, 231);
+}
+
+#wrap>header a {
+    text-decoration: none;
+}
+
+#wrap>header .logo {
+    font-size: 4rem;
+    color: orange;
+}
+
+#wrap>header .title {
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#wrap>header .title h1 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+#wrap>header .title i {
+    font-size: small;
+    color: orange;
+}
+
+#wrap>header .title span {
+    color: orange;
+}
+
+#wrap>header .title small {
+    font-family: monospace;
+    letter-spacing: .25rem;
+}
+
+/* Menu principal */
+
+#wrap>nav {
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    border: 1px solid white;
+    border-radius: .4rem;
+}
+
+#wrap>nav a {
+    text-decoration: none;
+    color: #222;
+    padding: 1rem;
+    transition: .2s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: .45rem;
+}
+
+#wrap>nav a i {
+    font-size: 2rem;
+}
+
+#wrap>nav a:hover {
+    background-color: #222;
+    color: orange;
+}
+
+#wrap>nav a:first-child {
+    margin-right: auto;
+    border-radius: .45rem 0 0 .45rem;
+}
+
+#wrap>nav a:last-child {
+    border-radius: 0 .45rem .45rem 0;
+}
+
+/* Rodapé */
+
+#wrap>footer {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid white;
+    border-bottom: none;
+    border-radius: .4rem .4rem 0 0;
+}
+
+#wrap>footer i {
+    font-size: 2rem;
+    margin: .5rem;
+}
+
+#wrap>footer a {
+    color: #fff;
+}
+
+#wrap>footer a:hover {
+    color: #ffa500;
+}
+
+/**********************************/
+/* Media Queries - Responsividade */
+/**********************************/
+
+/* Media Queries - Telas >= 768px */
+
+@media screen and (min-width: 768px) {
+
+    /* Reposiciona os conteúdos */
+
+    #wrap>main {
+        flex-direction: row;
+    }
+
+    #wrap>main>aside {
+
+        /* flex: 0 0 220px; → o mesmo que abaixo! */
+
+        flex-shrink: 0;
+        flex-basis: 220px;
+    }
+}
+
+/* Media Queries - Telas >= 575px */
+@media screen and (min-width: 575px) {
+
+    /* Reposiciona o formulário de pesquisa */
+
+    #wrap>header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /* reposiciona o menu principal */
+
+    #wrap>nav a {
+        flex-direction: row;
+        gap: .25rem;
+    }
+
+    #wrap>nav a i {
+        font-size: 1.25rem;
+    }
+
+}
